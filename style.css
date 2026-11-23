@@ -1,0 +1,329 @@
+/* ===== المتغيرات ===== */
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #1c2833;
+  --muted: #5d6d7e;
+  --primary: #0f4c81;
+  --primary-dark: #0a3558;
+  --accent: #14b8a6;
+  --border: #e3e9f0;
+  --wa: #25d366;
+  --wa-dark: #1ebe5b;
+  --radius: 18px;
+  --shadow: 0 8px 28px rgba(15, 76, 129, 0.08);
+}
+
+/* ===== أساسيات ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Cairo", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+/* ===== الترويسة ===== */
+.hero {
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary) 60%, var(--accent));
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 48px 20px 40px;
+  box-shadow: var(--shadow);
+  margin-bottom: 22px;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  display: grid;
+  place-items: center;
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.title {
+  margin-top: 6px;
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  opacity: 0.95;
+}
+
+/* ===== البطاقات ===== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+  padding-inline-start: 14px;
+  border-inline-start: 5px solid var(--accent);
+  line-height: 1.5;
+}
+
+.intro {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+/* ===== المهارات ===== */
+.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills li {
+  background: #eaf3fb;
+  color: var(--primary-dark);
+  border: 1px solid #cfe2f3;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.skills li:hover {
+  transform: translateY(-3px);
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ===== المشاريع ===== */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.project {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fbfcfe;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 76, 129, 0.12);
+}
+
+.thumb {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #d6e8f7, #bfe9e3);
+  overflow: hidden;
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project:hover .thumb img {
+  transform: scale(1.06);
+}
+
+.project-body {
+  padding: 16px 18px 20px;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(20, 184, 166, 0.14);
+  color: #0d7c70;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.project h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.6;
+}
+
+.project p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ===== التعليم ===== */
+.edu {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.edu-dot {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(20, 184, 166, 0.2);
+}
+
+.edu h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.edu p {
+  color: var(--muted);
+}
+
+/* ===== التواصل ===== */
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  display: inline-block;
+}
+
+.contact p {
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.wa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--wa);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.2rem;
+  padding: 16px 38px;
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.wa-btn:hover,
+.wa-btn:focus-visible {
+  background: var(--wa-dark);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
+  outline: none;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 10px 26px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 10px 38px rgba(37, 211, 102, 0.7); }
+}
+
+/* ===== التذييل ===== */
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 0 16px 28px;
+}
+
+/* ===== ظهور تدريجي عند التمرير ===== */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===== الجوال ===== */
+@media (max-width: 560px) {
+  body {
+    font-size: 16px;
+  }
+  .card {
+    padding: 22px 18px;
+  }
+  .hero {
+    padding: 38px 16px 32px;
+  }
+  .wa-btn {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+  }
+}
+
+/* ===== تقليل الحركة ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .wa-btn {
+    animation: none;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
